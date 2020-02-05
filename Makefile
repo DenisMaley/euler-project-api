@@ -8,7 +8,7 @@ system-packages:
 	sudo apt install python-pip -y
 
 python-packages:
-	pip install -r requirements.txt
+	pip install -r requirements.txt --no-cache-dir
 
 install: system-packages python-packages
 
