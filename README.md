@@ -7,6 +7,8 @@
     To run test: make tests
 
     To run application: make run
+    
+    To run db init: make init-db
 
     To run all commands at once : make all
 
@@ -25,4 +27,5 @@
     Value: "token_generated_during_login"
 
     For testing authorization, url for getting all user requires an admin token while url for getting a single
-    user by public_id requires just a regular authentication.
+    user by public_id requires just a regular authentication. To grant admin priviliges to a user, 
+    manually update a record in db.

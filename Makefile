@@ -15,7 +15,12 @@ install: system-packages python-packages
 tests:
 	python manage.py test
 
+init-db:
+	python manage.py db init
+	python manage.py db migrate --message 'initial database migration'
+	python manage.py db upgrade
+
 run:
 	python manage.py run
 
-all: clean install tests run
+all: clean install tests init-db run
