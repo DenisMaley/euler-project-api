@@ -4,7 +4,7 @@ import uuid
 from app.main import db
 from app.main.model.user import User
 
-
+# TODO make methods' names shorter
 def save_new_user(data):
     user = User.query.filter_by(email=data['email']).first()
     if not user:
