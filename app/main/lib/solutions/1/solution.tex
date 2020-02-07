@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{empheq}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{array}% http://ctan.org/pkg/array
+\setdefaultlanguage{english}
+\setmainfont[Mapping=tex-text]{CMU Serif}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\title{Multiples of 3 and 5 problem}
+\author{
+Denis Maley  \\
+Amsterdam  \\
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\textbf{\large The problem description:}
+
+\bigskip
+
+If we list all the natural numbers below 10 that are multiples of 3 or 5, 
+we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000.
+
+\bigskip
+
+Let's reformulate the problem in general form for two dividers:
+
+\bigskip
+
+\textit{
+Given a non-negative integer $n$ and two integers $d_1$ and $d_2$, 
+find the sum of all the multiples of $d_1$ or $d_2$ below $n$
+}
+
+\bigskip
+
+
+\newpage
+
+\textbf{\large Solution:}
+
+\bigskip    
+
+
+
+We can notice that multiples of $d_1$ and $d_2$ form two 
+Arithmetic Progression(AP):
+
+$$d_1, \> 2d_1, \> 3d_1, \> \ldots$$
+$$d_2, \> 2d_2, \> 3d_2, \> \ldots$$
+
+\bigskip
+
+Let's denote: 
+
+\bigskip
+
+$T(n, d_1, d_2)$ - the sum of all the multiples of $d_1$ or $d_2$ below $n$
+
+\bigskip
+
+$S_{d}(m)$ - sum of the first $m$ multiples of $d$, thus it is the sum 
+of the first $m$ terms of the AP: $d, \> 2d, \> 3d, \> \ldots$
+
+$$ S_d(n) = \frac{m(d + md)}{2} = \frac{m(m + 1)d}{2}$$
+
+\bigskip
+
+In both sequences there will be common terms:
+
+$$d_{1}d_{2}, \>  2d_{1}d_{2}, \> 3d_{1}d_{2}, \> \ldots$$
+
+
+So if we will sum terms: $S_{d_1}(m_1) + S_{d_2}(m_2)$ these common terms 
+will be repeated. Hence we have to subtract them: 
+
+$$T(n, d_1, d_2) = S_{d_1}(m(d_1, n)) + S_{d_2}(m(d_1, n)) - 
+S_{d_{1}d_{2}}(m(d_{1}d_{2}, n)), $$
+
+\bigskip
+
+where $m(d, n) = {\displaystyle \floor*{\frac{n}{d}}}$ - 
+amount of the multiples of $d$ below $n$.
+
+
+
+\bigskip
+\end{document}
