@@ -1,5 +1,5 @@
 from flask_restplus import Resource
-from ..service.solution_service import get_a_solution
+from ..service.solution_service import get_solution
 from ..util.dto import SolutionDto
 
 api = SolutionDto.api
@@ -13,7 +13,7 @@ class Solution(Resource):
     #@api.marshal_with(_solution)
     def get(self, solution_id):
         """get a solution given its identifier"""
-        solution = get_a_solution(solution_id)
+        solution = get_solution(solution_id)
         if not solution:
             api.abort(404)
         else:
