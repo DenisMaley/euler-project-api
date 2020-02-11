@@ -1,11 +1,11 @@
-def sumAP(n, d):
+def sum_ap(n: int, d: int) -> int:
     # amount of terms in the arithmetic progression
     n = int(n / d)
 
-    return n * (n + 1) * d / 2
+    return int(n * (n + 1) * d / 2)
 
 
-def sumMultiplesTwoDividers(n, d1, d2):
-    return int(sumAP(n - 1, d1) +
-               sumAP(n - 1, d2) -
-               sumAP(n - 1, d1 * d2))
+def sum_multiples_two_dividers(n: int, d1: int, d2: int) -> int:
+    return int(sum_ap(n - 1, d1) +
+               sum_ap(n - 1, d2) -
+               sum_ap(n - 1, d1 * d2))

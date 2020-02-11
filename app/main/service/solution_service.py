@@ -1,4 +1,4 @@
-def get_a_solution(solution_id):
+def get_solution(solution_id):
     package = 'app.main.lib.solutions'
 
     try:
